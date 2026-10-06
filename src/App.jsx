@@ -224,8 +224,6 @@ function About({ t }) {
           <div key={k} className="srow"><dt>{k}</dt><dd>{v}</dd></div>
         ))}
       </dl>
-      <h3>{t.authorTitle}</h3>
-      <p className="muted">{t.authorText}</p>
     </section>
   );
 }

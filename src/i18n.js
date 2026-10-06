@@ -54,8 +54,6 @@ export const STR = {
       ['Inference', 'CPU-only on ARM64 (no GPU); about 2 min per generation; FFmpeg aarch64 for audio handling'],
       ['Server', 'Oracle Cloud — Ampere ARM64, 4 vCPU, 24 GB RAM, Ubuntu 24.04'],
     ],
-    authorTitle: 'Author',
-    authorText: 'Built by Jon Peciña (jpecina@gmail.com) as a personal, didactic project.',
   },
   es: {
     appTitle: 'Estudio de clonación de voz',
@@ -110,8 +108,6 @@ export const STR = {
       ['Inferencia', 'Solo CPU en ARM64 (sin GPU); unos 2 min por generación; FFmpeg aarch64 para el audio'],
       ['Servidor', 'Oracle Cloud — Ampere ARM64, 4 vCPU, 24 GB de RAM, Ubuntu 24.04'],
     ],
-    authorTitle: 'Autor',
-    authorText: 'Creado por Jon Peciña (jpecina@gmail.com) como proyecto personal y didáctico.',
   },
 };
 
