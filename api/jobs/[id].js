@@ -7,8 +7,8 @@ function env() {
 }
 
 export default async function handler(req, res) {
-  if (req.method !== 'GET') {
-    res.setHeader('Allow', 'GET');
+  if (req.method !== 'GET' && req.method !== 'DELETE') {
+    res.setHeader('Allow', 'GET, DELETE');
     return res.status(405).json({ error: 'method not allowed' });
   }
   const cfg = env();
@@ -17,6 +17,7 @@ export default async function handler(req, res) {
   if (!id || /[^a-zA-Z0-9_-]/.test(String(id))) return res.status(400).json({ error: 'bad id' });
   try {
     const r = await fetch(`${cfg.url}/api/jobs/${encodeURIComponent(String(id))}`, {
+      method: req.method,
       headers: { Authorization: `Bearer ${cfg.token}` },
     });
     const text = await r.text();

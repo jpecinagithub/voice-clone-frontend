@@ -111,6 +111,17 @@ export default function App() {
 
   const canSubmit = audioFile && name.trim() && text.trim() && refText.trim() && consent && !busy;
 
+  const removeJob = async (id) => {
+    if (!window.confirm(t.deleteConfirm)) return;
+    try {
+      const r = await fetch(`/api/jobs/${encodeURIComponent(id)}`, { method: 'DELETE' });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      setJobs((js) => js.filter((j) => j.id !== id));
+    } catch (e2) {
+      setError(`${t.deleteError}: ${e2.message}`);
+    }
+  };
+
   const badge = (s) => `badge b-${s}`;
 
   return (
@@ -185,7 +196,10 @@ export default function App() {
               <li key={j.id} className="job">
                 <div className="jhead">
                   <strong>{j.name}</strong>
-                  <span className={badge(j.status)}>{t[j.status] || j.status}</span>
+                  <span className="jact">
+                    <span className={badge(j.status)}>{t[j.status] || j.status}</span>
+                    <button className="btn danger sm" onClick={() => removeJob(j.id)}>{t.deleteJob}</button>
+                  </span>
                 </div>
                 <div className="jmeta">{fmtTime(j.created_at)}</div>
                 {j.status === 'done' && (

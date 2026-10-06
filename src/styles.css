@@ -71,6 +71,7 @@ textarea { resize: vertical; }
 .jobs { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .job { background: #0b1220; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
 .jhead { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.jact { display: flex; gap: 8px; align-items: center; }
 .jmeta { color: var(--muted); font-size: 0.8rem; margin-top: 4px; }
 .jdone { margin-top: 10px; display: grid; gap: 8px; }
 .jdone audio { width: 100%; }
