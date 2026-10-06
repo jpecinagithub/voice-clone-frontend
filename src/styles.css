@@ -1,0 +1,89 @@
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --line: #334155;
+  --txt: #e2e8f0;
+  --muted: #94a3b8;
+  --acc: #38bdf8;
+  --acc-d: #0284c7;
+  --ok: #4ade80;
+  --warn: #fbbf24;
+  --err: #f87171;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--txt);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+}
+.page { max-width: 720px; margin: 0 auto; padding: 20px 16px 40px; }
+.top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+.top h1 { margin: 0 0 4px; font-size: 1.6rem; }
+.sub { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.langsw { display: flex; gap: 6px; }
+.langsw button {
+  background: var(--card); color: var(--muted); border: 1px solid var(--line);
+  border-radius: 8px; padding: 6px 12px; cursor: pointer; font-weight: 600;
+}
+.langsw button.on { color: #fff; border-color: var(--acc); }
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 14px; padding: 18px; margin-bottom: 18px;
+}
+.card h2 { margin: 0 0 14px; font-size: 1.15rem; }
+label { display: block; margin-bottom: 14px; font-weight: 600; font-size: 0.92rem; }
+label small { display: block; font-weight: 400; color: var(--muted); margin-top: 4px; font-size: 0.8rem; }
+input[type=text], input:not([type]), textarea, select {
+  width: 100%; margin-top: 6px; padding: 10px 12px;
+  background: #0b1220; color: var(--txt);
+  border: 1px solid var(--line); border-radius: 10px; font-size: 1rem;
+}
+textarea { resize: vertical; }
+.field { margin-bottom: 14px; }
+.flabel { display: block; font-weight: 600; font-size: 0.92rem; margin-bottom: 8px; }
+.audiorow { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.or { color: var(--muted); font-size: 0.85rem; }
+.filechip {
+  margin-top: 8px; display: inline-block; background: #0b1220;
+  border: 1px solid var(--line); border-radius: 999px;
+  padding: 6px 14px; font-size: 0.85rem;
+}
+.btn {
+  border: none; border-radius: 10px; padding: 10px 18px;
+  font-size: 0.95rem; font-weight: 700; cursor: pointer;
+}
+.btn.primary { background: var(--acc); color: #06202e; width: 100%; margin-top: 4px; }
+.btn.primary:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn.ghost { background: transparent; color: var(--acc); border: 1px solid var(--acc-d); }
+.btn.danger { background: transparent; color: var(--err); border: 1px solid var(--err); }
+.btn.sm { padding: 6px 12px; font-size: 0.85rem; text-decoration: none; display: inline-block; }
+.consent { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: 0.88rem; }
+.consent input { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--acc); flex-shrink: 0; }
+.err {
+  background: rgba(248, 113, 113, 0.12); border: 1px solid var(--err);
+  color: #fecaca; border-radius: 10px; padding: 10px 12px;
+  margin-bottom: 12px; font-size: 0.88rem; overflow-wrap: anywhere;
+}
+.err.sm { margin: 8px 0 0; }
+.muted { color: var(--muted); }
+.jobs { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.job { background: #0b1220; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.jhead { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.jmeta { color: var(--muted); font-size: 0.8rem; margin-top: 4px; }
+.jdone { margin-top: 10px; display: grid; gap: 8px; }
+.jdone audio { width: 100%; }
+.badge {
+  font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 999px; letter-spacing: 0.04em;
+}
+.b-queued { background: rgba(251, 191, 36, 0.15); color: var(--warn); }
+.b-processing { background: rgba(56, 189, 248, 0.15); color: var(--acc); }
+.b-done { background: rgba(74, 222, 128, 0.15); color: var(--ok); }
+.b-error { background: rgba(248, 113, 113, 0.15); color: var(--err); }
+footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 24px; }
+@media (max-width: 480px) {
+  .top h1 { font-size: 1.3rem; }
+  .card { padding: 14px; }
+}
