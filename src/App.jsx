@@ -201,8 +201,31 @@ export default function App() {
         </section>
       </main>
 
+      <About t={t} />
+
       <footer>{t.footer}</footer>
       <Analytics />
     </div>
+  );
+}
+
+function About({ t }) {
+  return (
+    <section className="card">
+      <h2>{t.aboutTitle}</h2>
+      <p className="muted">{t.aboutLead}</p>
+      <h3>{t.howTitle}</h3>
+      <ol className="steps">
+        {t.steps.map((s, i) => <li key={i}>{s}</li>)}
+      </ol>
+      <h3>{t.stackTitle}</h3>
+      <dl className="stack">
+        {t.stack.map(([k, v]) => (
+          <div key={k} className="srow"><dt>{k}</dt><dd>{v}</dd></div>
+        ))}
+      </dl>
+      <h3>{t.authorTitle}</h3>
+      <p className="muted">{t.authorText}</p>
+    </section>
   );
 }
